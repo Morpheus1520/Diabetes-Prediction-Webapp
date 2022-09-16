@@ -1,6 +1,5 @@
 pickle-mixin==1.0.2
 streamlit==1.2.0
-PIL==9.1.1
 streamlit-option-menu==0.3.2
 numpy==1.23.0
 pandas==1.4.3
