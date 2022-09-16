@@ -54,6 +54,10 @@ def diabetes_prediction(input_data):
     return prediction
 
 
+def col_shift(col1, col2, col3):
+    return col2, col3, col1
+
+
 def main():
     with st.sidebar:
         selected = option_menu("Main Menu", ["Read", "Predict"], icons=["journal-bookmark-fill", "code-slash"])
@@ -384,11 +388,16 @@ voting_clf.fit(X_train, y_train)""", "python")
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            pregnancies = st.number_input("Number of Pregnancies", step=1, format="%i")
+            gender = st.selectbox("Gender", ("Male", "Female"))
+            if gender == "Female":
+                col1, col2, col3 = col_shift(col1, col2, col3)
+                with col1:
+                    pregnancies = st.number_input("Number of Pregnancies", step=1, format="%i")
+            elif gender == "Male":
+                pregnancies = 0
 
         with col2:
             glucose = st.number_input("Glucose level (mg/dl)",
-
                                       help="Measurement of the level of glucose (sugar) in a person's blood.")
 
         with col3:
@@ -399,21 +408,19 @@ voting_clf.fit(X_train, y_train)""", "python")
 
         with col2:
             insulin = st.number_input("Insulin level",
-
                                       help="Insulin is a hormone that helps move blood sugar, known as glucose, "
                                            "from your bloodstream into your cells.")
 
         with col3:
             bmi = st.number_input("Body Mass Index",
-
                                   help="Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided "
                                        "by the square of height in meters (or feet).")
 
         with col1:
             dpf = st.number_input("Diabetes Pedigree Function",
-
                                   help="Indicates the function which scores likelihood of diabetes based on family "
-                                       "history")
+                                       "history. "
+                                       "Use this link to calculate your DPF: https://bit.ly/3QXNBdC", format="%.3f")
 
         with col2:
             age = st.number_input("Age", step=1, format="%i")
@@ -424,15 +431,11 @@ voting_clf.fit(X_train, y_train)""", "python")
         # Create a button
         if st.button("Diabetes Prediction Result"):
             final_pred = diabetes_prediction(
-
                 [pregnancies, glucose, bloodpressure, skinthickness, insulin, bmi, dpf, age])
 
         if final_pred == 0:
-
             st.success("Person is Not Diabetic")
-
         elif final_pred == 1:
-
             st.error("Person is Diabetic")
 
 
