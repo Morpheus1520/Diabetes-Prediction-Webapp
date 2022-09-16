@@ -111,7 +111,7 @@ and cystic fibrosis-related diabetes. """)
             "The graph below shows that the data is unbalanced. The number of diabetic patients is 268 the number of "
             "non-diabetic patients is 500")
 
-        target_distribution_img = Image.open(r"plots\distribution_by_target.png")
+        target_distribution_img = Image.open(r"plots/distribution_by_target.png")
         st.image(target_distribution_img)
 
         st.markdown("**Missing Values**")
