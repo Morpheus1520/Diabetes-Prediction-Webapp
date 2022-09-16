@@ -1,0 +1,12 @@
+pickle-mixin==1.0.2
+streamlit==1.2.0
+PIL==9.1.1
+streamlit-option-menu==0.3.2
+numpy==1.23.0
+pandas==1.4.3
+pickleshare==0.7.5
+scikit-learn==1.1.1
+scipy==1.8.1
+seaborn==0.11.2
+lightgbm==3.3.2
+protobuf==3.20.1
