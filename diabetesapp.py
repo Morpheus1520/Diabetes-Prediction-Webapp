@@ -129,7 +129,7 @@ and cystic fibrosis-related diabetes. """)
             "Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]].replace(0, np.NaN)""",
             "python")
 
-        missing_img = Image.open(r"plots\missing_values.png")
+        missing_img = Image.open(r"plots/missing_values.png")
         st.image(missing_img)
 
         st.markdown("**Imputing the Missing Values**")
@@ -142,7 +142,7 @@ and cystic fibrosis-related diabetes. """)
 
         st.write("We have now imputed the missing values with respect to the records in the table above")
 
-        imputed_dataset = Image.open(r"plots\imputed_dataset.png")
+        imputed_dataset = Image.open(r"plots/imputed_dataset.png")
         st.image(imputed_dataset)
 
         st.subheader("Feature creation and Exploratory data analysis (EDA)")
@@ -154,7 +154,7 @@ and cystic fibrosis-related diabetes. """)
 
         st.markdown("**N1 (Age <= 30 and Glucose <= 120)**")
 
-        n1scatter = Image.open(r"plots\n1scatter.png")
+        n1scatter = Image.open(r"plots/n1scatter.png")
         st.image(n1scatter)
 
         st.write(
@@ -168,7 +168,7 @@ diabetes_dataset.loc[(diabetes_dataset["Glucose"] <= 120) & (diabetes_dataset["A
         st.write(
             "Now, out of the instances in N1 we find out how many of them are diabetic and how many are non-diabetic")
 
-        n1bar = Image.open(r"plots\n1bar.png")
+        n1bar = Image.open(r"plots/n1bar.png")
         st.image(n1bar)
 
         st.write("""Out of all the 268 Diabetic people, 242 fall under N1=0 and only 26 fall under N1=1 <br> 
@@ -176,7 +176,7 @@ diabetes_dataset.loc[(diabetes_dataset["Glucose"] <= 120) & (diabetes_dataset["A
         that majority of the people in N1 are healthy.""",
                  unsafe_allow_html=True)
 
-        n1pie = Image.open(r"plots\n1pie.png")
+        n1pie = Image.open(r"plots/n1pie.png")
         st.image(n1pie, caption="""N1 distribution by target (Age <= 30 and Glucose <= 120)""")
 
         st.write("")
@@ -189,120 +189,120 @@ diabetes_dataset.loc[(diabetes_dataset["Glucose"] <= 120) & (diabetes_dataset["A
         the square of the body height, and is universally expressed in units of kg/m2, resulting from mass in 
         kilograms and height in metres. <br> <br> 30 kg/m² is the limit to obesity.""", unsafe_allow_html=True)
 
-        n2bar = Image.open(r"plots\bmibar.png")
+        n2bar = Image.open(r"plots/bmibar.png")
         st.image(n2bar)
 
-        n2pie = Image.open(r"plots\bmipie.png")
+        n2pie = Image.open(r"plots/bmipie.png")
         st.image(n2pie, "N2 distribution by target")
 
         st.markdown("**N3 (pregnancies <= 6 and Age <= 30)**")
 
-        n3scatter = Image.open(r"plots\n3scatter.png")
+        n3scatter = Image.open(r"plots/n3scatter.png")
         st.image(n3scatter)
 
         st.write(
             "From the scatterplot above notice that majority of the Healthy people are concentrated between age <= 30 "
             "and pregnancies <= 6")
 
-        n3bar = Image.open(r"plots\n3bar.png")
+        n3bar = Image.open(r"plots/n3bar.png")
         st.image(n3bar)
 
         st.write("""This Piechart signifies that out of all the 268 diabetic people, 32.1% fell under N3 and 67.9% 
         fell under ROW. <br> Similarly out of all the 500 Healthy people 65% fell under N3.""", unsafe_allow_html=True)
 
-        n3pie = Image.open(r"plots\n3pie.png")
+        n3pie = Image.open(r"plots/n3pie.png")
         st.image(n3pie, "N3 distribution by target")
 
         st.markdown("**N4 (BloodPressure <= 80 and Glucose <= 105)**")
 
-        n4scatter = Image.open(r"plots\n4scatter.png")
+        n4scatter = Image.open(r"plots/n4scatter.png")
         st.image(n4scatter)
 
         st.write(
             "From the scatterplot above notice that majority of the Healthy people are concentrated between "
             "BloodPressure <= 80 and Glucose <= 105")
 
-        n4bar = Image.open(r"plots\n4bar.png")
+        n4bar = Image.open(r"plots/n4bar.png")
         st.image(n4bar)
 
-        n4pie = Image.open(r"plots\n4pie.png")
+        n4pie = Image.open(r"plots/n4pie.png")
         st.image(n4pie, "N4 distribution by target")
 
         st.markdown("**N5 (SkinThickness <= 20)**")
 
-        n5bar = Image.open(r"plots\n5bar.png")
+        n5bar = Image.open(r"plots/n5bar.png")
         st.image(n5bar)
 
-        n5pie = Image.open(r"plots\n5pie.png")
+        n5pie = Image.open(r"plots/n5pie.png")
         st.image(n5pie, "N5 distribution by target")
 
         st.markdown("**N6 (SkinThickness <= 20 and BMI < 30)**")
 
-        n6scatter = Image.open(r"plots\n6scatter.png")
+        n6scatter = Image.open(r"plots/n6scatter.png")
         st.image(n6scatter)
 
         st.write(
             "From the scatterplot above notice that majority of the Healthy people are concentrated between "
             "SkinThickness <= 20 and BMI < 30")
 
-        n6bar = Image.open(r"plots\n6bar.png")
+        n6bar = Image.open(r"plots/n6bar.png")
         st.image(n6bar)
 
-        n6pie = Image.open(r"plots\n6pie.png")
+        n6pie = Image.open(r"plots/n6pie.png")
         st.image(n6pie, "N6 distribution by target")
 
         st.markdown("**N7 (Glucose <= 105 and BMI <= 30)**")
 
-        n7scatter = Image.open(r"plots\n7scatter.png")
+        n7scatter = Image.open(r"plots/n7scatter.png")
         st.image(n7scatter)
 
         st.write(
             "From the scatterplot above notice that majority of the Healthy people are concentrated between Glucose "
             "<= 105 and BMI <= 30")
 
-        n7bar = Image.open(r"plots\n7bar.png")
+        n7bar = Image.open(r"plots/n7bar.png")
         st.image(n7bar)
 
-        n7pie = Image.open(r"plots\n7pie.png")
+        n7pie = Image.open(r"plots/n7pie.png")
         st.image(n7pie, "N7 distribution by target")
 
         st.markdown("**N9 (Insulin <= 200)**")
 
-        n9bar = Image.open(r"plots\n9bar.png")
+        n9bar = Image.open(r"plots/n9bar.png")
         st.image(n9bar)
 
-        n9pie = Image.open(r"plots\n9pie.png")
+        n9pie = Image.open(r"plots/n9pie.png")
         st.image(n9pie, "N9 distribution by target")
 
         st.markdown("**N10 (BloodPressure < 80)**")
 
-        n10bar = Image.open(r"plots\n10bar.png")
+        n10bar = Image.open(r"plots/n10bar.png")
         st.image(n10bar)
 
-        n10pie = Image.open(r"plots\n10pie.png")
+        n10pie = Image.open(r"plots/n10pie.png")
         st.image(n10pie, "N10 distribution by target")
 
         st.markdown("**N11 (Pregnancies between 1 - 3)**")
 
-        n11bar = Image.open(r"plots\n11bar.png")
+        n11bar = Image.open(r"plots/n11bar.png")
         st.image(n11bar)
 
-        n11pie = Image.open(r"plots\n11pie.png")
+        n11pie = Image.open(r"plots/n11pie.png")
         st.image(n11pie, "N11 distribution by target")
 
         st.markdown("**N12 (Age <= 30 and BloodPressure <= 90)**")
 
-        n12scatter = Image.open(r"plots\n12scatter.png")
+        n12scatter = Image.open(r"plots/n12scatter.png")
         st.image(n12scatter)
 
         st.write(
             "From the scatterplot above notice that majority of the Healthy people are concentrated between Age <= 30 "
             "and BloodPressure <= 90")
 
-        n12bar = Image.open(r"plots\n12bar.png")
+        n12bar = Image.open(r"plots/n12bar.png")
         st.image(n12bar)
 
-        n12pie = Image.open(r"plots\n12pie.png")
+        n12pie = Image.open(r"plots/n12pie.png")
         st.image(n12pie, "N12 distribution by target")
 
         st.subheader("Preparation of Dataset")
@@ -318,7 +318,7 @@ scaled = scaler.fit_transform(num_df)
 num_df = pd.DataFrame(scaled, columns=num_df.columns)
 num_df.head()""", "python")
 
-        scaled_df = Image.open(r"plots\scaled_df.png")
+        scaled_df = Image.open(r"plots/scaled_df.png")
         st.image(scaled_df)
 
         st.code("""final_df = pd.concat([num_df, binary_df], axis=1)""", "python")
@@ -326,7 +326,7 @@ num_df.head()""", "python")
         st.write("This is our final dataset with existing and created features.")
         st.table(diabetes_dataset_preprocessed.head())
 
-        corr = Image.open(r"plots\correlation_heatmap.png")
+        corr = Image.open(r"plots/correlation_heatmap.png")
         st.image(corr, "Correlation Heatmap")
 
         st.code("""X = final_df.drop(columns="Outcome", axis=1)
@@ -353,7 +353,7 @@ With Random Grid we specify the number of combinations that we want""")
         level-wise. It chooses the leaf with maximum delta loss to grow. Since the leaf is fixed, the leaf-wise 
         algorithm has lower loss compared to the level-wise algorithm.""")
 
-        lgbm = Image.open(r"plots\lgbm.png")
+        lgbm = Image.open(r"plots/lgbm.png")
         st.image(lgbm)
 
         st.write(
