@@ -51,10 +51,7 @@ def diabetes_prediction(input_data):
 
     prediction = loaded_model.predict(final_input_data.reshape(1, -1))
 
-    if prediction == 0:
-        return "Person is Not Diabetic"
-    elif prediction == 1:
-        return "Person is Diabetic"
+    return prediction
 
 
 def main():
@@ -182,128 +179,132 @@ diabetes_dataset.loc[(diabetes_dataset["Glucose"] <= 120) & (diabetes_dataset["A
         st.write("")
         st.write("Similarly, we create more such features.")
 
-        st.markdown("**N2 (BMI <= 30)**")
+        st.write("Features N2 to N12 have been created in the collapsible section below.")
 
-        st.markdown("""**BMI**: According to wikipedia "The body mass index (BMI) or Quetelet index is a value 
-        derived from the mass (weight) and height of an individual. The BMI is defined as the body mass divided by 
-        the square of the body height, and is universally expressed in units of kg/m2, resulting from mass in 
-        kilograms and height in metres. <br> <br> 30 kg/m² is the limit to obesity.""", unsafe_allow_html=True)
+        with st.expander("See Similar Features"):
+            st.markdown("**N2 (BMI <= 30)**")
 
-        n2bar = Image.open(r"plots/bmibar.png")
-        st.image(n2bar)
+            st.markdown("""**BMI**: According to wikipedia "The body mass index (BMI) or Quetelet index is a value 
+            derived from the mass (weight) and height of an individual. The BMI is defined as the body mass divided by 
+            the square of the body height, and is universally expressed in units of kg/m2, resulting from mass in 
+            kilograms and height in metres. <br> <br> 30 kg/m² is the limit to obesity.""", unsafe_allow_html=True)
 
-        n2pie = Image.open(r"plots/bmipie.png")
-        st.image(n2pie, "N2 distribution by target")
+            n2bar = Image.open(r"plots/bmibar.png")
+            st.image(n2bar)
 
-        st.markdown("**N3 (pregnancies <= 6 and Age <= 30)**")
+            n2pie = Image.open(r"plots/bmipie.png")
+            st.image(n2pie, "N2 distribution by target")
 
-        n3scatter = Image.open(r"plots/n3scatter.png")
-        st.image(n3scatter)
+            st.markdown("**N3 (pregnancies <= 6 and Age <= 30)**")
 
-        st.write(
-            "From the scatterplot above notice that majority of the Healthy people are concentrated between age <= 30 "
-            "and pregnancies <= 6")
+            n3scatter = Image.open(r"plots/n3scatter.png")
+            st.image(n3scatter)
 
-        n3bar = Image.open(r"plots/n3bar.png")
-        st.image(n3bar)
+            st.write(
+                "From the scatterplot above notice that majority of the Healthy people are concentrated between age <= 30 "
+                "and pregnancies <= 6")
 
-        st.write("""This Piechart signifies that out of all the 268 diabetic people, 32.1% fell under N3 and 67.9% 
-        fell under ROW. <br> Similarly out of all the 500 Healthy people 65% fell under N3.""", unsafe_allow_html=True)
+            n3bar = Image.open(r"plots/n3bar.png")
+            st.image(n3bar)
 
-        n3pie = Image.open(r"plots/n3pie.png")
-        st.image(n3pie, "N3 distribution by target")
+            st.write("""This Piechart signifies that out of all the 268 diabetic people, 32.1% fell under N3 and 67.9% 
+            fell under ROW. <br> Similarly out of all the 500 Healthy people 65% fell under N3.""",
+                     unsafe_allow_html=True)
 
-        st.markdown("**N4 (BloodPressure <= 80 and Glucose <= 105)**")
+            n3pie = Image.open(r"plots/n3pie.png")
+            st.image(n3pie, "N3 distribution by target")
 
-        n4scatter = Image.open(r"plots/n4scatter.png")
-        st.image(n4scatter)
+            st.markdown("**N4 (BloodPressure <= 80 and Glucose <= 105)**")
 
-        st.write(
-            "From the scatterplot above notice that majority of the Healthy people are concentrated between "
-            "BloodPressure <= 80 and Glucose <= 105")
+            n4scatter = Image.open(r"plots/n4scatter.png")
+            st.image(n4scatter)
 
-        n4bar = Image.open(r"plots/n4bar.png")
-        st.image(n4bar)
+            st.write(
+                "From the scatterplot above notice that majority of the Healthy people are concentrated between "
+                "BloodPressure <= 80 and Glucose <= 105")
 
-        n4pie = Image.open(r"plots/n4pie.png")
-        st.image(n4pie, "N4 distribution by target")
+            n4bar = Image.open(r"plots/n4bar.png")
+            st.image(n4bar)
 
-        st.markdown("**N5 (SkinThickness <= 20)**")
+            n4pie = Image.open(r"plots/n4pie.png")
+            st.image(n4pie, "N4 distribution by target")
 
-        n5bar = Image.open(r"plots/n5bar.png")
-        st.image(n5bar)
+            st.markdown("**N5 (SkinThickness <= 20)**")
 
-        n5pie = Image.open(r"plots/n5pie.png")
-        st.image(n5pie, "N5 distribution by target")
+            n5bar = Image.open(r"plots/n5bar.png")
+            st.image(n5bar)
 
-        st.markdown("**N6 (SkinThickness <= 20 and BMI < 30)**")
+            n5pie = Image.open(r"plots/n5pie.png")
+            st.image(n5pie, "N5 distribution by target")
 
-        n6scatter = Image.open(r"plots/n6scatter.png")
-        st.image(n6scatter)
+            st.markdown("**N6 (SkinThickness <= 20 and BMI < 30)**")
 
-        st.write(
-            "From the scatterplot above notice that majority of the Healthy people are concentrated between "
-            "SkinThickness <= 20 and BMI < 30")
+            n6scatter = Image.open(r"plots/n6scatter.png")
+            st.image(n6scatter)
 
-        n6bar = Image.open(r"plots/n6bar.png")
-        st.image(n6bar)
+            st.write(
+                "From the scatterplot above notice that majority of the Healthy people are concentrated between "
+                "SkinThickness <= 20 and BMI < 30")
 
-        n6pie = Image.open(r"plots/n6pie.png")
-        st.image(n6pie, "N6 distribution by target")
+            n6bar = Image.open(r"plots/n6bar.png")
+            st.image(n6bar)
 
-        st.markdown("**N7 (Glucose <= 105 and BMI <= 30)**")
+            n6pie = Image.open(r"plots/n6pie.png")
+            st.image(n6pie, "N6 distribution by target")
 
-        n7scatter = Image.open(r"plots/n7scatter.png")
-        st.image(n7scatter)
+            st.markdown("**N7 (Glucose <= 105 and BMI <= 30)**")
 
-        st.write(
-            "From the scatterplot above notice that majority of the Healthy people are concentrated between Glucose "
-            "<= 105 and BMI <= 30")
+            n7scatter = Image.open(r"plots/n7scatter.png")
+            st.image(n7scatter)
 
-        n7bar = Image.open(r"plots/n7bar.png")
-        st.image(n7bar)
+            st.write(
+                "From the scatterplot above notice that majority of the Healthy people are concentrated between Glucose "
+                "<= 105 and BMI <= 30")
 
-        n7pie = Image.open(r"plots/n7pie.png")
-        st.image(n7pie, "N7 distribution by target")
+            n7bar = Image.open(r"plots/n7bar.png")
+            st.image(n7bar)
 
-        st.markdown("**N9 (Insulin <= 200)**")
+            n7pie = Image.open(r"plots/n7pie.png")
+            st.image(n7pie, "N7 distribution by target")
 
-        n9bar = Image.open(r"plots/n9bar.png")
-        st.image(n9bar)
+            st.markdown("**N9 (Insulin <= 200)**")
 
-        n9pie = Image.open(r"plots/n9pie.png")
-        st.image(n9pie, "N9 distribution by target")
+            n9bar = Image.open(r"plots/n9bar.png")
+            st.image(n9bar)
 
-        st.markdown("**N10 (BloodPressure < 80)**")
+            n9pie = Image.open(r"plots/n9pie.png")
+            st.image(n9pie, "N9 distribution by target")
 
-        n10bar = Image.open(r"plots/n10bar.png")
-        st.image(n10bar)
+            st.markdown("**N10 (BloodPressure < 80)**")
 
-        n10pie = Image.open(r"plots/n10pie.png")
-        st.image(n10pie, "N10 distribution by target")
+            n10bar = Image.open(r"plots/n10bar.png")
+            st.image(n10bar)
 
-        st.markdown("**N11 (Pregnancies between 1 - 3)**")
+            n10pie = Image.open(r"plots/n10pie.png")
+            st.image(n10pie, "N10 distribution by target")
 
-        n11bar = Image.open(r"plots/n11bar.png")
-        st.image(n11bar)
+            st.markdown("**N11 (Pregnancies between 1 - 3)**")
 
-        n11pie = Image.open(r"plots/n11pie.png")
-        st.image(n11pie, "N11 distribution by target")
+            n11bar = Image.open(r"plots/n11bar.png")
+            st.image(n11bar)
 
-        st.markdown("**N12 (Age <= 30 and BloodPressure <= 90)**")
+            n11pie = Image.open(r"plots/n11pie.png")
+            st.image(n11pie, "N11 distribution by target")
 
-        n12scatter = Image.open(r"plots/n12scatter.png")
-        st.image(n12scatter)
+            st.markdown("**N12 (Age <= 30 and BloodPressure <= 90)**")
 
-        st.write(
-            "From the scatterplot above notice that majority of the Healthy people are concentrated between Age <= 30 "
-            "and BloodPressure <= 90")
+            n12scatter = Image.open(r"plots/n12scatter.png")
+            st.image(n12scatter)
 
-        n12bar = Image.open(r"plots/n12bar.png")
-        st.image(n12bar)
+            st.write(
+                "From the scatterplot above notice that majority of the Healthy people are concentrated between Age <= 30 "
+                "and BloodPressure <= 90")
 
-        n12pie = Image.open(r"plots/n12pie.png")
-        st.image(n12pie, "N12 distribution by target")
+            n12bar = Image.open(r"plots/n12bar.png")
+            st.image(n12bar)
+
+            n12pie = Image.open(r"plots/n12pie.png")
+            st.image(n12pie, "N12 distribution by target")
 
         st.subheader("Preparation of Dataset")
 
@@ -383,38 +384,56 @@ voting_clf.fit(X_train, y_train)""", "python")
         col1, col2, col3 = st.columns(3)
 
         with col1:
-            pregnancies = st.number_input("Number of Pregnancies")
+            pregnancies = st.number_input("Number of Pregnancies", step=1, format="%i")
 
         with col2:
-            glucose = st.number_input("Glucose level")
+            glucose = st.number_input("Glucose level (mg/dl)",
+
+                                      help="Measurement of the level of glucose (sugar) in a person's blood.")
 
         with col3:
-            bloodpressure = st.number_input("Blood Pressure")
+            bloodpressure = st.number_input("Blood Pressure (mmHg)", step=1, format="%i")
 
         with col1:
             skinthickness = st.number_input("Skin Thickness")
 
         with col2:
-            insulin = st.number_input("Insulin level")
+            insulin = st.number_input("Insulin level",
+
+                                      help="Insulin is a hormone that helps move blood sugar, known as glucose, "
+                                           "from your bloodstream into your cells.")
 
         with col3:
-            bmi = st.number_input("Body Mass Index")
+            bmi = st.number_input("Body Mass Index",
+
+                                  help="Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided "
+                                       "by the square of height in meters (or feet).")
 
         with col1:
-            dpf = st.number_input("Diabetes Pedigree Function")
+            dpf = st.number_input("Diabetes Pedigree Function",
+
+                                  help="Indicates the function which scores likelihood of diabetes based on family "
+                                       "history")
 
         with col2:
-            age = st.number_input("Age")
+            age = st.number_input("Age", step=1, format="%i")
 
         # Prediction
-        final_pred = ""
+        final_pred = None
 
         # Create a button
         if st.button("Diabetes Prediction Result"):
             final_pred = diabetes_prediction(
+
                 [pregnancies, glucose, bloodpressure, skinthickness, insulin, bmi, dpf, age])
 
-        st.success(final_pred)
+        if final_pred == 0:
+
+            st.success("Person is Not Diabetic")
+
+        elif final_pred == 1:
+
+            st.error("Person is Diabetic")
 
 
 if __name__ == '__main__':
