@@ -392,38 +392,35 @@ voting_clf.fit(X_train, y_train)""", "python")
             if gender == "Female":
                 col1, col2, col3 = col_shift(col1, col2, col3)
                 with col1:
-                    pregnancies = st.number_input("Number of Pregnancies", step=1, format="%i")
+                    pregnancies = st.number_input("Number of Pregnancies", step=1, format="%i", min_value=0, max_value=20)
             elif gender == "Male":
                 pregnancies = 0
 
         with col2:
             glucose = st.number_input("Glucose level (mg/dl)",
-                                      help="Measurement of the level of glucose (sugar) in a person's blood.")
+                                      help="Measurement of the level of glucose (sugar) in a person's blood.", min_value=32, max_value=210)
 
         with col3:
-            bloodpressure = st.number_input("Blood Pressure (mmHg)", step=1, format="%i")
+            bloodpressure = st.number_input("Blood Pressure (mmHg)", step=1, format="%i", min_value=22, max_value=125)
 
         with col1:
-            skinthickness = st.number_input("Skin Thickness")
+            skinthickness = st.number_input("Skin Thickness", min_value=5, max_value=102)
 
         with col2:
             insulin = st.number_input("Insulin level",
-                                      help="Insulin is a hormone that helps move blood sugar, known as glucose, "
-                                           "from your bloodstream into your cells.")
+                                      help="Insulin is a hormone that helps move blood sugar, known as glucose, from your bloodstream into your cells.", min_value=10, max_value=850)
 
         with col3:
             bmi = st.number_input("Body Mass Index",
-                                  help="Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided "
-                                       "by the square of height in meters (or feet).")
+                                  help="Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided by the square of height in meters (or feet).", min_value=15, max_value=70)
 
         with col1:
             dpf = st.number_input("Diabetes Pedigree Function",
-                                  help="Indicates the function which scores likelihood of diabetes based on family "
-                                       "history. "
-                                       "Use this link to calculate your DPF: https://bit.ly/3QXNBdC", format="%.3f")
+                                  help="Indicates the function which scores likelihood of diabetes based on family history."
+                                       "Use this link to calculate your DPF: https://bit.ly/3QXNBdC", format="%.3f", min_value=0.05, max_value=2.6)
 
         with col2:
-            age = st.number_input("Age", step=1, format="%i")
+            age = st.number_input("Age", step=1, format="%i", min_value=20, max_value=100)
 
         # Prediction
         final_pred = None
